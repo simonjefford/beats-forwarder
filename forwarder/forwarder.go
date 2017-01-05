@@ -21,15 +21,6 @@ import (
 
 var Registry map[string]output.Output
 
-func init() {
-
-	Registry = make(map[string]output.Output)
-	Registry["syslog"] = &output.SyslogClient{}
-	Registry["logmatic"] = &output.LogmaticClient{}
-	Registry["udp_tcp"] = &output.SocketClient{}
-
-}
-
 func Run(config *cfg.Config) error {
 
 	var out output.Output
